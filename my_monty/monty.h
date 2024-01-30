@@ -8,7 +8,6 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -20,10 +19,9 @@
  */
 typedef struct stack_s
 {
-        char *order;
 	int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -36,19 +34,14 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /*-----------my functions------- */
 
-void file_reader(char* file, char *content);
+void file_reader(char *file, char *content);
 stack_t *add_dnodeint_end(stack_t **head, const int n);
 stack_t *add_dnodeint(stack_t **head, const int n);
-
-
-
-
-
 
 #endif
